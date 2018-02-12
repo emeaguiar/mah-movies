@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import Header from './Header';
-import Movie from './Movie';
+import MovieList from './MovieList';
 import {initialMovies} from '../movies';
 import {additionalMovies} from '../movies';
 import AddMovie from './AddMovie';
@@ -10,28 +10,19 @@ class App extends Component {
   constructor() {
     super();
 
-    this.state = {
-      movies: initialMovies
-    };
-
     this.loadAdditionalMovies = this.loadAdditionalMovies.bind( this );
     this.addMovieToGallery    = this.addMovieToGallery.bind( this );
   }
 
   render() {
     return (
+
       <div className="App">
         <Header text="Mario's Movie Mojo app!" />
         <p className="App-intro">
           Welcome to the 'Movie Mojo' React app!
         </p>
-        <div className="movies">
-          {
-            Object
-              .keys( this.state.movies )
-              .map( key => <Movie key={ key } meta={ this.state.movies[ key ] } /> )
-          }
-        </div>
+        <MovieList />
         <div className="add-movies">
           <button onClick={ this.loadAdditionalMovies }>Load more...</button>
         </div>
