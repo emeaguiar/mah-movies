@@ -9,7 +9,7 @@ class MovieList extends Component {
 		};
 	}
 
-	componentDidMount() {
+	componentWillMount() {
 		fetch( 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=985e24fe0adef6dbea8259e606b71a37' )
 			.then( results => {
 				return results.json();

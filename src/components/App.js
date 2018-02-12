@@ -10,8 +10,22 @@ class App extends Component {
   constructor() {
     super();
 
+    this.state = {
+      conf: []
+    };
+
     this.loadAdditionalMovies = this.loadAdditionalMovies.bind( this );
     this.addMovieToGallery    = this.addMovieToGallery.bind( this );
+  }
+
+  componentWillMount() {
+    fetch( 'https://api.themoviedb.org/3/configuration?api_key=985e24fe0adef6dbea8259e606b71a37' )
+      .then( results => {
+        return results.json();
+      } )
+      .then( data => {
+        sessionStorage.setItem( 'conf', JSON.stringify( data ) );
+      } );
   }
 
   render() {
