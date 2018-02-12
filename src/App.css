@@ -47,6 +47,10 @@
   max-width: 25%;
 }
 
+.movie .poster img {
+  width: 200px;
+}
+
 /* movie form styles */
  
 .movie-form {

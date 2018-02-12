@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Poster from './Poster';
 
 class Movie extends Component {
 	render() {
@@ -6,7 +7,7 @@ class Movie extends Component {
 			<div className="movie">
 				<h2>{ this.props.meta.title }</h2>
 				<div>
-					<img width="200" src={ this.props.meta.poster } />
+					<Poster path={ this.props.meta.poster_path } />
 				</div>
 				<p>({ this.props.meta.release_date })</p>
 				<p>{ this.props.meta.overview }</p>
