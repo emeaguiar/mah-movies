@@ -24,7 +24,7 @@ class App extends Component {
         return results.json();
       } )
       .then( data => {
-        sessionStorage.setItem( 'conf', JSON.stringify( data ) );
+        this.setState( { conf: data } );
       } );
   }
 
