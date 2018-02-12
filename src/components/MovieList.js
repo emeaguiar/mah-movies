@@ -16,6 +16,12 @@ class MovieList extends Component {
 			} )
 			.then( data => {
 				let movies = data.results.map( movie => {
+					const date = new Date( movie.release_date );
+
+					movie.release_date = new Intl.DateTimeFormat( 'en-US', {
+						'year': 'numeric'
+					} ).format( date );
+
 					return (
 						<Movie key={movie.id} meta={movie} />
 					)
