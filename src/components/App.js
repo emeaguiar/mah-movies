@@ -20,9 +20,6 @@ class App extends Component {
           Welcome to the 'Movie Mojo' React app!
         </p>
         <MovieList />
-        <div className="add-movies">
-          <button onClick={ this.loadAdditionalMovies }>Load more...</button>
-        </div>
       </div>
     );
   }

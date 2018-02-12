@@ -8,7 +8,6 @@ class MovieList extends Component {
 			movies: [],
 		};
 
-		this.apiKey               = this.apiKey.bind( this );
     	this.loadAdditionalMovies = this.loadAdditionalMovies.bind( this );
 	}
 
@@ -24,7 +23,7 @@ class MovieList extends Component {
 		);
 	}
 
-	loadAdditionalMovies() {
+	loadAdditionalMovies( limit ) {
 		/* var currentMovies = { ...this.state.movies },
 			newMovies = Object.assign( currentMovies, additionalMovies );
 	   
@@ -48,15 +47,9 @@ class MovieList extends Component {
 			} );
 
 			this.setState( { 'movies': movies } );
-	} );
+		} );
 		
 	}
-	
-	  apiKey() {
-		  this.setState( {
-			  apiKey: '985e24fe0adef6dbea8259e606b71a37'
-		  } );
-	  }
 }
 
 export default MovieList;
