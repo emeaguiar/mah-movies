@@ -5,7 +5,7 @@ class Poster extends Component {
 		const basePath = 'https://image.tmdb.org/t/p/w342/';
 
 		return (
-			<div class="poster">
+			<div className="poster">
 				<img src={ basePath + this.props.path } />
 			</div>
 		)
