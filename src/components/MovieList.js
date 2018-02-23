@@ -12,15 +12,15 @@ class MovieList extends Component {
 	}
 
 	componentWillMount() {
-		this.loadAdditionalMovies();
-	}
+		const localStorageRef = localStorage.getItem( 'mah-movie-list' );
 
-	render() {
-		return (
-			<div className="movies">
-				{this.state.movies}
-			</div>
-		);
+		if ( localStorageRef && 'undefined' !== localStorageRef ) {
+			this.setState( { 'movies': JSON.parse( localStorageRef ) } );
+		} else {
+			this.loadAdditionalMovies();
+		}
+
+		//this.loadAdditionalMovies();
 	}
 
 	loadAdditionalMovies( limit ) {
@@ -47,8 +47,25 @@ class MovieList extends Component {
 			} );
 
 			this.setState( { 'movies': movies } );
+
+			// Save data in local storage to save us a call.
+			localStorage.setItem( 'mah-movie-list', JSON.stringify( movies ) );
 		} );
 		
+	}
+
+	renderMovie( movie ) {
+		return(
+			<Movie key={ movie.props.meta.id } meta={ movie.props.meta } />
+		)
+	}
+
+	render() {
+		return (
+			<div className="movies">
+				{ this.state.movies.map( this.renderMovie ) }
+			</div>
+		);
 	}
 }
 
