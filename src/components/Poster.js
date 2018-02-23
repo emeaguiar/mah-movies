@@ -6,7 +6,7 @@ class Poster extends Component {
 
 		return (
 			<div className="poster">
-				<img src={ basePath + this.props.path } />
+				<img src={ basePath + this.props.path } alt={ this.props.alt } />
 			</div>
 		)
 	}
