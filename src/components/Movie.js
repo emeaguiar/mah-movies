@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import Poster from './Poster';
+import { Link } from 'react-router-dom';
 
 class Movie extends Component {
 	render() {
 		return (
 			<div className="movie">
-				<h2>{ this.props.meta.title }</h2>
+				<h2>
+					<Link to={ `/movie/${this.props.meta.id}` }>{ this.props.meta.title }</Link></h2>
 				<div>
-					<Poster path={ this.props.meta.poster_path } />
+					<Link to={ `/movie/${this.props.meta.id}` }>
+						<Poster path={ this.props.meta.poster_path } />
+					</Link>
 				</div>
 				<p>({ this.props.meta.release_date })</p>
 				<p>{ this.props.meta.overview }</p>
