@@ -32,10 +32,18 @@ class SingleMovie extends Component {
 		} );
 	}
 
+	renderMovie = ( movie ) => {
+		return(
+			<div className="movie">
+				<h1>{ movie.title }</h1>
+			</div>
+		)
+	}
+
 	render() {
 		return(
-			<div className="single-movie">
-				<h1>{ `Serching for movie` }</h1>
+			<div className="movie-wrapper">
+				{ this.renderMovie( this.state.movie ) }
 			</div>
 		)
 	}
