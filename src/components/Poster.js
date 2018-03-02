@@ -1,8 +1,28 @@
 import React, { Component } from 'react';
+import { getConfig } from '../config';
 
 class Poster extends Component {
+	getBasePath( size ) {
+		const base = 'https://image.tmdb.org/t/p/';
+		
+		let basePath;
+
+		switch ( size ) {
+			case 'single' :
+				basePath = `${ base }w500`;
+				break;
+			default :
+				basePath = `${ base }w342`;
+				break;
+		}
+
+		return basePath;
+	}
+
 	render() {
-		const basePath = 'https://image.tmdb.org/t/p/w342/';
+		const config = getConfig();
+
+		const basePath = this.getBasePath( this.props.size );
 
 		return (
 			<div className="poster">

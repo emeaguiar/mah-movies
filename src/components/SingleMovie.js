@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Poster from './Poster';
+
 
 class SingleMovie extends Component {
 	constructor() {
@@ -36,6 +38,7 @@ class SingleMovie extends Component {
 		return(
 			<div className="movie">
 				<h1>{ movie.title }</h1>
+				<Poster size="single" path={ movie.poster_path } alt={ `Poster for ${ movie.title }` } />
 			</div>
 		)
 	}
