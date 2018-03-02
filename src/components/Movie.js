@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 class Movie extends Component {
 	render() {
 		return (
-			<div className="movie">
+			<div className="movie column">
 				<h2>
 					<Link to={ `/movie/${this.props.meta.id}` }>{ this.props.meta.title }</Link></h2>
 				<div>

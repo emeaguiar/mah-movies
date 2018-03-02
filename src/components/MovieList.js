@@ -56,6 +56,36 @@ class MovieList extends Component {
 		
 	}
 
+	/**
+	 * 'https://stackoverflow.com/questions/36318601/react-js-every-nth-item-add-opening-tag-or-closing-tag'
+	 * @param {*} arr 
+	 * @param {*} size 
+	 */
+	chunks( arr, size ) {
+		if ( ! Array.isArray( arr ) ) {
+		  throw new TypeError('Input should be Array');
+		}
+	  
+		if (typeof size !== 'number') {
+		  throw new TypeError('Size should be a Number');
+		}
+	  
+		var result = [];
+		for ( var i = 0; i < arr.length; i += size ) {
+		  result.push(arr.slice(i, size + i));
+		}
+	  
+		return result;
+	};
+
+	renderRows = ( row, index ) => {
+		return (
+			<div className="movies-row columns" key={ index }>
+				{ row.map( this.renderMovie ) }
+			</div>
+		)
+	}
+
 	renderMovie( movie ) {
 		return(
 			<Movie key={ movie.props.meta.id } meta={ movie.props.meta } />
@@ -63,9 +93,11 @@ class MovieList extends Component {
 	}
 
 	render() {
+		const rows = this.chunks( this.state.movies, 4 );
+
 		return (
 			<div className="movies container">
-				{ this.state.movies.map( this.renderMovie ) }
+				{ rows.map( this.renderRows ) }
 			</div>
 		);
 	}
