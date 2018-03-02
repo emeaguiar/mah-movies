@@ -27,10 +27,12 @@
 		padding: 10px 0;
 
 		> .runtime,
-		> .genres {
+		> .genres,
+		> .rating {
 			font-family: $font-logo;
 			font-size: .875rem;
 			font-weight: 400;
+			text-align: center;
 			text-transform: uppercase;
 		}
 	}
