@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { getConfig } from '../config';
 
 class Poster extends Component {
 	getBasePath( size ) {
@@ -23,8 +22,6 @@ class Poster extends Component {
 	}
 
 	render() {
-		const config = getConfig();
-
 		const basePath = this.getBasePath( this.props.size );
 
 		const type = this.props.type || 'poster';

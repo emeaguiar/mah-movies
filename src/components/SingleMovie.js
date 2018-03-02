@@ -40,9 +40,7 @@ class SingleMovie extends Component {
 	pluck = ( { items = [], key, separator } ) => {
 		const itemsArray = [];
 
-		items.map( item => {
-			itemsArray.push( item[ key ] );
-		} );
+		items.map( item => itemsArray.push( item[ key ] ) );;
 
 		return itemsArray.join( separator );
 	}
@@ -69,13 +67,14 @@ class SingleMovie extends Component {
 							{ this.convertRuntime( movie.runtime ) }
 							<span className="genres">{ genres }</span>
 						</div>
+
+						<p className="overview">{ movie.overview }</p>
 					</div>
 				</div>
 				<div className="movie-data container">
 					<Poster size="single" path={ movie.poster_path } alt={ `Poster for ${ movie.title }` } />
 					<span className="date">{ `Date: ${ movie.release_date }` }</span>
 					<CastList movie={ movie.id } />
-					<p className="overview">{ movie.overview }</p>
 				</div>
 			</div>
 		)
