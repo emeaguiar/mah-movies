@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Poster from './Poster';
+import CastList from './CastList';
 
-import './css/single.css'
+import './css/single.css';
 
 
 class SingleMovie extends Component {
@@ -40,7 +41,15 @@ class SingleMovie extends Component {
 		return(
 			<div className="movie">
 				<h1>{ movie.title }</h1>
-				<Poster size="single" path={ movie.poster_path } alt={ `Poster for ${ movie.title }` } />
+				<div className="movie-data">
+					<Poster size="single" path={ movie.poster_path } alt={ `Poster for ${ movie.title }` } />
+					<ul className="genres">
+						{ movie.genres.map( genre => <li className="genre" key={`genre-${ genre.id }`}>{ genre.name }</li> ) }
+					</ul>
+					<span className="date">{ `Date: ${ movie.release_date }` }</span>
+					<CastList movie={ movie.id } />
+					<p className="overview">{ movie.overview }</p>
+				</div>
 			</div>
 		)
 	}
