@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Poster from './Poster';
 import CastList from './CastList';
 
-import './css/single.css';
-
 
 class SingleMovie extends Component {
 	constructor() {
