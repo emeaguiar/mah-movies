@@ -1,7 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,900');
+@import url('https://fonts.googleapis.com/css?family=Amiri:400,400i|Montserrat:400,900');
 
 $font-logo: 'Montserrat', sans-serif;
+$font-text: 'Amiri', serif;
 
 $color-fantasy: #fefdfc;
 
 $text-color: $color-fantasy;
+
+h1,
+h2,
+h3, {
+	font-family: $font-logo;
+	font-weight: 900;
+}
+
+h2 {
+	font-size: 2rem;
+}

@@ -17,9 +17,12 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Header text="Mah Movies" />
-				<p className="App-intro">
-					Welcome to the 'Mah Movies' React app!
-				</p>
+				<div className="intro container">
+					<span className="description">
+						Diclaimer: This is a movie gallery exercise.
+					</span>
+					<h2>Most Popular</h2>
+				</div>
 				<MovieList />
 			</div>
 		);

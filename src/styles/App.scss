@@ -4,4 +4,15 @@
 body {
 	background: hsl(213, 30%, 7%);
 	color: $text-color;
+	font-family: $font-text;
 }
+
+.intro {
+	padding-top: 56px;
+	text-align: center;
+}
+
+.description {
+	font-style: italic;
+}
+
