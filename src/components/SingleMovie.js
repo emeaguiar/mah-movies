@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import Header from './Header';
 import Poster from './Poster';
 import CastList from './CastList';
-
 
 class SingleMovie extends Component {
 	constructor() {
@@ -38,6 +38,7 @@ class SingleMovie extends Component {
 	renderMovie = ( movie ) => {
 		return(
 			<div className="movie">
+				<Header text="Mah Movies" />
 				<h1>{ movie.title }</h1>
 				<div className="movie-data">
 					<Poster size="single" path={ movie.poster_path } alt={ `Poster for ${ movie.title }` } />
