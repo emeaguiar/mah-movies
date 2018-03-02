@@ -47,6 +47,13 @@ class SingleMovie extends Component {
 		return studiosArray.join( ', ' );
 	}
 
+	convertRuntime = ( minutes ) => {
+		const hours = Math.floor( minutes / 60 );
+		const leftMinutes = minutes % 60;
+
+		return <span className="runtime">{ `${ hours }hr ${ leftMinutes }min` }</span>
+	}
+
 	renderMovie = ( movie ) => {
 		const studios = this.getStudios( movie.production_companies );
 
@@ -57,6 +64,9 @@ class SingleMovie extends Component {
 					<div className="header container">
 						<span className="studio">{ `${ studios } presents` }</span>
 						<h1>{ movie.title }</h1>
+						<div className="metadata">
+							{ this.convertRuntime( movie.runtime ) }
+						</div>
 					</div>
 				</div>
 				<div className="movie-data container">
