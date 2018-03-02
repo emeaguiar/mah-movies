@@ -39,7 +39,7 @@ class CastList extends Component {
 			return;
 		}
 
-		return fullCast.cast;
+		return fullCast.cast.slice( 0, 5);
 	}
 
 	render() {
