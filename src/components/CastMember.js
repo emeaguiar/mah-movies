@@ -7,7 +7,13 @@ class CastMember extends Component {
 
 		return (
 			<li className="cast-member">
-				<Poster size="cast-small" type="profile" path={ castMember.profile_path } alt={ `Shot of ${ castMember.name }` } />
+				<Poster
+					size="cast-small"
+					type="profile"
+					path={ castMember.profile_path }
+					alt={ `Shot of ${ castMember.name }` }
+				/>
+				<span className="name">{ `${ castMember.name } as ${ castMember.character }` }</span>
 			</li>
 		)
 	}
