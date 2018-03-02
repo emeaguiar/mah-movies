@@ -16,11 +16,11 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-			<Header text="Mah Movies" />
-			<p className="App-intro">
-				Welcome to the 'Mah Movies' React app!
-			</p>
-			<MovieList />
+				<Header text="Mah Movies" />
+				<p className="App-intro">
+					Welcome to the 'Mah Movies' React app!
+				</p>
+				<MovieList />
 			</div>
 		);
 	}

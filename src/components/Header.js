@@ -5,9 +5,9 @@ import './styles/header.css';
 class Header extends Component {
 	render() {
 		return (
-			<header className="App-header container">
-				<div className="column">
-					<h2 className="App-title">{ this.props.text }</h2>					
+			<header className="header-container">
+				<div className="container">
+					<h2 className="title">{ this.props.text }</h2>					
 				</div>
 			</header>
 		)
