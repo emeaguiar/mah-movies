@@ -4,8 +4,10 @@ $font-logo: 'Montserrat', sans-serif;
 $font-text: 'Amiri', serif;
 
 $color-fantasy: #fefdfc;
+$color-crimson: #da0d2b;
 
 $text-color: $color-fantasy;
+$cta-color:  $color-crimson;
 
 h1,
 h2,
@@ -21,4 +23,8 @@ h2 {
 
 a {
 	color: $text-color;
+
+	&:hover {
+		color: $cta-color;
+	}
 }
