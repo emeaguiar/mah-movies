@@ -1,3 +1,20 @@
-.single-movie {
+@import './global/variables';
+@import './global/typography';
 
+.single-movie {
+	> .header-wrapper {
+		background: $color-mako;
+		padding-top: 56px;
+	}
+
+	> .header-wrapper > .header {
+		text-align: center;
+	}
+
+	> .header-wrapper > .header > .studio {
+		font-family: $font-logo;
+		font-size: .875rem;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
 }

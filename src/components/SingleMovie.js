@@ -53,9 +53,11 @@ class SingleMovie extends Component {
 		return(
 			<div className="single-movie">
 				<Header text="Mah Movies" type="-single" />
-				<div className="header container">
-					<span className="studio">{ `${ studios } presents` }</span>
-					<h1>{ movie.title }</h1>
+				<div className="header-wrapper">
+					<div className="header container">
+						<span className="studio">{ `${ studios } presents` }</span>
+						<h1>{ movie.title }</h1>
+					</div>
 				</div>
 				<div className="movie-data container">
 					<Poster size="single" path={ movie.poster_path } alt={ `Poster for ${ movie.title }` } />
