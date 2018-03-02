@@ -11,6 +11,9 @@ class Poster extends Component {
 			case 'single' :
 				basePath = `${ base }w500`;
 				break;
+			case 'cast-small' :
+				basePath = `${ base }w185`;
+				break;
 			default :
 				basePath = `${ base }w342`;
 				break;
@@ -24,8 +27,10 @@ class Poster extends Component {
 
 		const basePath = this.getBasePath( this.props.size );
 
+		const type = this.props.type || 'poster';
+
 		return (
-			<div className="poster">
+			<div className={ type }>
 				<img src={ basePath + this.props.path } alt={ this.props.alt } />
 			</div>
 		)
