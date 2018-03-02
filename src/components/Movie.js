@@ -15,9 +15,9 @@ class Movie extends Component {
 				</div>
 				<h2 class="title">
 					<Link to={ `/movie/${this.props.meta.id}` }>{ this.props.meta.title }</Link>
+					<span className="date"> ({ this.props.meta.release_date })</span>
 				</h2>
-				<p>({ this.props.meta.release_date })</p>
-				<p>{ this.props.meta.overview }</p>
+				<p className="overview">{ this.props.meta.overview }</p>
 			</div>
 		)
 	}
