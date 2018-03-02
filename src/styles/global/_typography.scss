@@ -1,13 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Amiri:400,400i|Montserrat:400,600,900');
+@import './variables';
 
 $font-logo: 'Montserrat', sans-serif;
 $font-text: 'Amiri', serif;
-
-$color-fantasy: #fefdfc;
-$color-crimson: #da0d2b;
-
-$text-color: $color-fantasy;
-$cta-color:  $color-crimson;
 
 h1,
 h2,

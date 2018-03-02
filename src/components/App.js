@@ -16,7 +16,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<Header text="Mah Movies" />
+				<Header text="Mah Movies" type="-archive" />
 				<div className="intro container">
 					<span className="description">
 						Diclaimer: This is a movie gallery exercise.

@@ -3,6 +3,8 @@ import Header from './Header';
 import Poster from './Poster';
 import CastList from './CastList';
 
+import '../styles/single-movie.css';
+
 class SingleMovie extends Component {
 	constructor() {
 		super();
@@ -35,12 +37,27 @@ class SingleMovie extends Component {
 		} );
 	}
 
+	getStudios = ( studios ) => {
+		const studiosArray = [];
+
+		studios.map( studio => {
+			studiosArray.push( studio.name );
+		} );
+
+		return studiosArray.join( ', ' );
+	}
+
 	renderMovie = ( movie ) => {
+		const studios = this.getStudios( movie.production_companies );
+
 		return(
-			<div className="movie">
-				<Header text="Mah Movies" />
-				<h1>{ movie.title }</h1>
-				<div className="movie-data">
+			<div className="single-movie">
+				<Header text="Mah Movies" type="-single" />
+				<div className="header container">
+					<span className="studio">{ `${ studios } presents` }</span>
+					<h1>{ movie.title }</h1>
+				</div>
+				<div className="movie-data container">
 					<Poster size="single" path={ movie.poster_path } alt={ `Poster for ${ movie.title }` } />
 					<ul className="genres">
 						{ movie.genres.map( genre => <li className="genre" key={`genre-${ genre.id }`}>{ genre.name }</li> ) }
