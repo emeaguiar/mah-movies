@@ -37,14 +37,14 @@ class SingleMovie extends Component {
 		} );
 	}
 
-	getStudios = ( studios ) => {
-		const studiosArray = [];
+	pluck = ( { items = [], key, separator } ) => {
+		const itemsArray = [];
 
-		studios.map( studio => {
-			studiosArray.push( studio.name );
+		items.map( item => {
+			itemsArray.push( item[ key ] );
 		} );
 
-		return studiosArray.join( ', ' );
+		return itemsArray.join( separator );
 	}
 
 	convertRuntime = ( minutes ) => {
@@ -55,7 +55,7 @@ class SingleMovie extends Component {
 	}
 
 	renderMovie = ( movie ) => {
-		const studios = this.getStudios( movie.production_companies );
+		const studios = this.pluck( { items: movie.production_companies, key: 'name', separator: ', ' } );
 
 		return(
 			<div className="single-movie">
