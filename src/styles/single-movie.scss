@@ -4,11 +4,12 @@
 .single-movie {
 	> .header-wrapper {
 		background: $color-mako;
-		padding-top: 56px;
+		padding: 56px 0;
 	}
 
 	> .header-wrapper > .header {
 		text-align: center;
+		width: 770px;
 	}
 
 	> .header-wrapper > .header > .studio {
@@ -19,6 +20,12 @@
 	}
 
 	> .header-wrapper > .header > .metadata {
+		border: 1px solid $color-rolling-stone;
+		border-right: 0;
+		border-left: 0;
+		margin: 20px 0;
+		padding: 10px 0;
+
 		> .runtime,
 		> .genres {
 			font-family: $font-logo;
@@ -26,5 +33,9 @@
 			font-weight: 400;
 			text-transform: uppercase;
 		}
+	}
+
+	> .header-wrapper > .header > .overview {
+		padding: 10px 0;
 	}
 }
