@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Poster from './Poster';
 
+import './css/single.css'
+
 
 class SingleMovie extends Component {
 	constructor() {
