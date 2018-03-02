@@ -56,6 +56,7 @@ class SingleMovie extends Component {
 
 	renderMovie = ( movie ) => {
 		const studios = this.pluck( { items: movie.production_companies, key: 'name', separator: ', ' } );
+		const genres  = this.pluck( { items: movie.genres, key: 'name', separator: '/' } )
 
 		return(
 			<div className="single-movie">
@@ -66,14 +67,12 @@ class SingleMovie extends Component {
 						<h1>{ movie.title }</h1>
 						<div className="metadata">
 							{ this.convertRuntime( movie.runtime ) }
+							<span className="genres">{ genres }</span>
 						</div>
 					</div>
 				</div>
 				<div className="movie-data container">
 					<Poster size="single" path={ movie.poster_path } alt={ `Poster for ${ movie.title }` } />
-					<ul className="genres">
-						{ movie.genres.map( genre => <li className="genre" key={`genre-${ genre.id }`}>{ genre.name }</li> ) }
-					</ul>
 					<span className="date">{ `Date: ${ movie.release_date }` }</span>
 					<CastList movie={ movie.id } />
 					<p className="overview">{ movie.overview }</p>

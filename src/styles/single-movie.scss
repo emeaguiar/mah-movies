@@ -18,10 +18,13 @@
 		text-transform: uppercase;
 	}
 
-	> .header-wrapper > .header > .metadata > .runtime {
-		font-family: $font-logo;
-		font-size: .875rem;
-		font-weight: 400;
-		text-transform: uppercase;
+	> .header-wrapper > .header > .metadata {
+		> .runtime,
+		> .genres {
+			font-family: $font-logo;
+			font-size: .875rem;
+			font-weight: 400;
+			text-transform: uppercase;
+		}
 	}
 }
