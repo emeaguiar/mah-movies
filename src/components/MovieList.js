@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Movie from './Movie';
 
+import './styles/movie-list.css';
+
 class MovieList extends Component {
 	constructor() {
 		super();
@@ -62,7 +64,7 @@ class MovieList extends Component {
 
 	render() {
 		return (
-			<div className="movies">
+			<div className="movies container">
 				{ this.state.movies.map( this.renderMovie ) }
 			</div>
 		);
