@@ -24,10 +24,10 @@ class Poster extends Component {
 	render() {
 		const basePath = this.getBasePath( this.props.size );
 
-		const type = this.props.type || 'poster';
+		const type = this.props.type || 'home';
 
 		return (
-			<div className={ type }>
+			<div className={ `poster -${ type }` }>
 				<img src={ basePath + this.props.path } alt={ this.props.alt } />
 			</div>
 		)

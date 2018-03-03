@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import CastMember from './CastMember';
 
+import './styles/cast.css';
+
 class CastList extends Component {
 	constructor() {
 		super();
@@ -46,9 +48,13 @@ class CastList extends Component {
 		const cast = this.getCast();
 
 		return (
-			<ul className="cast-list">
-				{ cast.map( member => <CastMember key={ member.id } details={ member } /> ) }
-			</ul>
+			<div className="container cast-list">
+				<div className="subtitle">Actors</div>
+				<h2>Famous People</h2>
+				<ul>
+					{ cast.map( member => <CastMember key={ member.id } details={ member } /> ) }
+				</ul>
+			</div>
 		);
 	}
 }

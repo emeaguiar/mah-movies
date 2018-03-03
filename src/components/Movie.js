@@ -13,7 +13,7 @@ class Movie extends Component {
 						<Poster path={ this.props.meta.poster_path } alt={ `Poster for ${ this.props.meta.title }` } />
 					</Link>
 				</div>
-				<h2 class="title">
+				<h2 className="title">
 					<Link to={ `/movie/${this.props.meta.id}` }>{ this.props.meta.title }</Link>
 					<span className="date"> ({ this.props.meta.release_date })</span>
 				</h2>

@@ -1,0 +1,19 @@
+@import '../../styles/global/typography';
+
+.cast-list {
+	margin-top: 100px;
+
+	h2 {
+		text-align: center;
+	}
+
+	> .subtitle {
+		color: $text-color;
+		font-family: $font-logo;
+		font-size: .875rem;
+		font-weight: 400;
+		margin-bottom: 0;
+		text-align: center;
+		text-transform: uppercase;
+	}
+}

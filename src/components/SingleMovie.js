@@ -4,6 +4,7 @@ import Poster from './Poster';
 import CastList from './CastList';
 
 import '../styles/single-movie.css';
+import './styles/poster.css';
 
 class SingleMovie extends Component {
 	constructor() {
@@ -73,10 +74,21 @@ class SingleMovie extends Component {
 					</div>
 				</div>
 				<div className="movie-data container">
-					<Poster size="single" path={ movie.poster_path } alt={ `Poster for ${ movie.title }` } />
-					<span className="date">{ `Date: ${ movie.release_date }` }</span>
-					<CastList movie={ movie.id } />
+					<div className="columns">
+						<div className="column">
+							<Poster
+								type="single"
+								size="single"
+								path={ movie.poster_path }
+								alt={ `Poster for ${ movie.title }` }
+							/>
+						</div>
+						<div className="column">
+							<h2>Reviews</h2>
+						</div>
+					</div>
 				</div>
+				<CastList movie={ movie.id } />
 			</div>
 		)
 	}
