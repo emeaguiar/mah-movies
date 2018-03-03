@@ -1,0 +1,19 @@
+@import '../../styles/global/variables';
+@import '../../styles/global/typography';
+
+.header-container {
+	border-bottom: 1px solid;
+	padding: 56px 0;
+
+	.title {
+		color: $text-color;
+		font-family: $font-logo;
+		font-size: 2rem;
+		font-weight: 900;
+	}
+
+	&.-single {
+		background-color: $color-mako;
+		border-bottom: 0;
+	}
+}

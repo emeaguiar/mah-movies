@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Amiri:400,400i|Montserrat:400,600,900');
+@import './variables';
+
+$font-logo: 'Montserrat', sans-serif;
+$font-text: 'Amiri', serif;
+
+h1,
+h2,
+h3, {
+	color: $text-color;
+	font-family: $font-logo;
+	font-weight: 900;
+}
+
+h1 {
+	font-size: 3rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+a {
+	color: $text-color;
+
+	&:hover {
+		color: $cta-color;
+	}
+}

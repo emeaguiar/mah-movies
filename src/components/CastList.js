@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import CastMember from './CastMember';
+import { chunks } from '../helpers';
+
+import './styles/cast.css';
 
 class CastList extends Component {
 	constructor() {
 		super();
 
 		this.state = {
-			cast: []
+			cast: {
+				cast: [],
+				crew: []
+			}
 		};
 	}
 
@@ -35,20 +41,37 @@ class CastList extends Component {
 	getCast = () => {
 		const fullCast = this.state.cast;
 
-		if ( ! fullCast ) {
-			return;
+		if ( ! fullCast || 'undefined' === typeof fullCast.cast ) {
+			return fullCast.cast;
 		}
 
-		return fullCast.cast.slice( 0, 5);
+		return fullCast.cast.slice( 0, 8);
+	}
+
+	renderRow = ( row, index ) => {
+		return(
+			<div className="cast-row columns" key={ index }>
+				{ row.map( this.renderCast ) }
+			</div>
+		)
+	}
+
+	renderCast = ( member ) => {
+		return (
+			<CastMember key={ member.id } details={ member } />
+		);
 	}
 
 	render() {
 		const cast = this.getCast();
+		const rows = chunks( { arr: cast, size: 4 } );
 
 		return (
-			<ul className="cast-list">
-				{ cast.map( member => <CastMember key={ member.id } details={ member } /> ) }
-			</ul>
+			<div className="container cast-list">
+				<div className="subtitle">Actors</div>
+				<h2>Famous People</h2>
+				{ rows.map( this.renderRow ) }
+			</div>
 		);
 	}
 }

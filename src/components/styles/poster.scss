@@ -1,0 +1,11 @@
+.poster {
+	&.-single {
+		width: 470px;
+	}
+
+	&.-profile {
+		img {
+			display: block;
+		}
+	}
+}

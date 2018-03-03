@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import '../App.css';
 import Header from './Header';
 import MovieList from './MovieList';
+
+import '../styles/App.css';
 
 class App extends Component {
 	constructor() {
@@ -15,11 +16,14 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-			<Header text="Mario's Movie Mojo app!" />
-			<p className="App-intro">
-			Welcome to the 'Movie Mojo' React app!
-			</p>
-			<MovieList />
+				<Header text="Mah Movies" type="-archive" />
+				<div className="intro container">
+					<span className="description">
+						Diclaimer: This is a movie gallery exercise.
+					</span>
+					<h2>Most Popular</h2>
+				</div>
+				<MovieList />
 			</div>
 		);
 	}

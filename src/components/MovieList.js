@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Movie from './Movie';
+import { chunks } from '../helpers';
+
+import './styles/movie-list.css';
 
 class MovieList extends Component {
 	constructor() {
@@ -54,6 +57,14 @@ class MovieList extends Component {
 		
 	}
 
+	renderRows = ( row, index ) => {
+		return (
+			<div className="movies-row columns" key={ index }>
+				{ row.map( this.renderMovie ) }
+			</div>
+		)
+	}
+
 	renderMovie( movie ) {
 		return(
 			<Movie key={ movie.props.meta.id } meta={ movie.props.meta } />
@@ -61,9 +72,11 @@ class MovieList extends Component {
 	}
 
 	render() {
+		const rows = chunks( { arr: this.state.movies, size: 4 } );
+
 		return (
-			<div className="movies">
-				{ this.state.movies.map( this.renderMovie ) }
+			<div className="movies container">
+				{ rows.map( this.renderRows ) }
 			</div>
 		);
 	}

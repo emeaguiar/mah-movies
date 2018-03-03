@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { getConfig } from '../config';
 
 class Poster extends Component {
 	getBasePath( size ) {
@@ -12,7 +11,7 @@ class Poster extends Component {
 				basePath = `${ base }w500`;
 				break;
 			case 'cast-small' :
-				basePath = `${ base }w185`;
+				basePath = `${ base }h632`;
 				break;
 			default :
 				basePath = `${ base }w342`;
@@ -23,14 +22,12 @@ class Poster extends Component {
 	}
 
 	render() {
-		const config = getConfig();
-
 		const basePath = this.getBasePath( this.props.size );
 
-		const type = this.props.type || 'poster';
+		const type = this.props.type || 'home';
 
 		return (
-			<div className={ type }>
+			<div className={ `poster -${ type }` }>
 				<img src={ basePath + this.props.path } alt={ this.props.alt } />
 			</div>
 		)

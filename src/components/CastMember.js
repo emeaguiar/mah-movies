@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import Poster from './Poster';
 
+import './styles/cast-member.css';
+
 class CastMember extends Component {
 	render() {
 		const castMember = this.props.details;
 
 		return (
-			<li className="cast-member">
+			<div className="cast-member column">
 				<Poster
 					size="cast-small"
 					type="profile"
 					path={ castMember.profile_path }
 					alt={ `Shot of ${ castMember.name }` }
 				/>
-				<span className="name">{ `${ castMember.name } as ${ castMember.character }` }</span>
-			</li>
+				<div className="name">{ castMember.name }</div>
+			</div>
 		)
 	}
 }

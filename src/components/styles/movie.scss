@@ -1,0 +1,14 @@
+@import '../../styles/global/typography';
+
+.movie-item {
+	> .title {
+		color: $text-color;
+		font-size: 1.125rem;
+		font-weight: 600;
+		margin-top: 20px;
+	}
+
+	> .overview {
+		font-size: 1.125rem;
+	}
+}

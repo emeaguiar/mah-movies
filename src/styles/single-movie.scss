@@ -1,0 +1,47 @@
+@import './global/variables';
+@import './global/typography';
+
+.single-movie {
+	> .header-wrapper {
+		background: $color-mako;
+		padding: 56px 0;
+	}
+
+	> .header-wrapper > .header {
+		text-align: center;
+		width: 770px;
+	}
+
+	> .header-wrapper > .header > .studio {
+		font-family: $font-logo;
+		font-size: .875rem;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
+	> .header-wrapper > .header > .metadata {
+		border: 1px solid $color-rolling-stone;
+		border-right: 0;
+		border-left: 0;
+		margin: 20px 0;
+		padding: 10px 0;
+
+		> .runtime,
+		> .genres,
+		> .rating {
+			font-family: $font-logo;
+			font-size: .875rem;
+			font-weight: 400;
+			text-align: center;
+			text-transform: uppercase;
+		}
+	}
+
+	> .header-wrapper > .header > .overview {
+		padding: 10px 0;
+	}
+
+	> .movie-data {
+		margin-top: 100px;
+	}
+}
