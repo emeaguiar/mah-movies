@@ -9,7 +9,10 @@ class CastList extends Component {
 		super();
 
 		this.state = {
-			cast: []
+			cast: {
+				cast: [],
+				crew: []
+			}
 		};
 	}
 
@@ -45,9 +48,9 @@ class CastList extends Component {
 		return fullCast.cast.slice( 0, 8);
 	}
 
-	renderRow = ( row ) => {
+	renderRow = ( row, index ) => {
 		return(
-			<div className="cast-row columns">
+			<div className="cast-row columns" key={ index }>
 				{ row.map( this.renderCast ) }
 			</div>
 		)
