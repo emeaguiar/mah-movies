@@ -6,7 +6,7 @@ class CastMember extends Component {
 		const castMember = this.props.details;
 
 		return (
-			<li className="cast-member">
+			<div className="cast-member column">
 				<Poster
 					size="cast-small"
 					type="profile"
@@ -14,7 +14,7 @@ class CastMember extends Component {
 					alt={ `Shot of ${ castMember.name }` }
 				/>
 				<span className="name">{ `${ castMember.name } as ${ castMember.character }` }</span>
-			</li>
+			</div>
 		)
 	}
 }

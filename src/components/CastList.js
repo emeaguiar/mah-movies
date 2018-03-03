@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CastMember from './CastMember';
+import { chunks } from '../helpers';
 
 import './styles/cast.css';
 
@@ -41,19 +42,32 @@ class CastList extends Component {
 			return;
 		}
 
-		return fullCast.cast.slice( 0, 5);
+		return fullCast.cast.slice( 0, 8);
+	}
+
+	renderRow = ( row ) => {
+		return(
+			<div className="cast-row columns">
+				{ row.map( this.renderCast ) }
+			</div>
+		)
+	}
+
+	renderCast = ( member ) => {
+		return (
+			<CastMember key={ member.id } details={ member } />
+		);
 	}
 
 	render() {
 		const cast = this.getCast();
+		const rows = chunks( { arr: cast, size: 4 } );
 
 		return (
 			<div className="container cast-list">
 				<div className="subtitle">Actors</div>
 				<h2>Famous People</h2>
-				<ul>
-					{ cast.map( member => <CastMember key={ member.id } details={ member } /> ) }
-				</ul>
+				{ rows.map( this.renderRow ) }
 			</div>
 		);
 	}

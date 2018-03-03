@@ -11,7 +11,7 @@ class Poster extends Component {
 				basePath = `${ base }w500`;
 				break;
 			case 'cast-small' :
-				basePath = `${ base }w185`;
+				basePath = `${ base }h632`;
 				break;
 			default :
 				basePath = `${ base }w342`;
