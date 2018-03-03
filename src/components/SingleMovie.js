@@ -88,7 +88,7 @@ class SingleMovie extends Component {
 						</div>
 					</div>
 				</div>
-				<CastList movie={ movie.id } />
+				<CastList movie={ this.props.match.params.movieSlug } />
 			</div>
 		)
 	}

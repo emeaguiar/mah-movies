@@ -41,8 +41,8 @@ class CastList extends Component {
 	getCast = () => {
 		const fullCast = this.state.cast;
 
-		if ( ! fullCast ) {
-			return;
+		if ( ! fullCast || 'undefined' === typeof fullCast.cast ) {
+			return fullCast.cast;
 		}
 
 		return fullCast.cast.slice( 0, 8);
