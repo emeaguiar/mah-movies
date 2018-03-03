@@ -1,0 +1,14 @@
+@import '../../styles/global/typography';
+
+.cast-member {
+	position: relative;
+
+	> .name {
+		font-family: $font-logo;
+		font-size: 2rem;
+		font-weight: 900;
+		padding: 15px;
+		position: absolute;
+		bottom: .75rem;
+	}
+}
