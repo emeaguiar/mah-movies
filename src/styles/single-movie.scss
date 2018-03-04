@@ -35,6 +35,11 @@
 			text-align: center;
 			text-transform: uppercase;
 		}
+
+		.fas {
+			color: $cta-color;
+			margin-right: 10px;
+		}
 	}
 
 	> .header-wrapper > .header > .overview {
