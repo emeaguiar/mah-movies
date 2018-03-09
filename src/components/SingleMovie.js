@@ -67,7 +67,7 @@ class SingleMovie extends Component {
 						<div className="metadata columns">
 							{ this.convertRuntime( movie.runtime ) }
 							<span className="genres column"><i className="fas fa-lg fa-film"></i>{ genres }</span>
-							<span className="rating column"><i className="fas fa-lg fa-star"></i>{ `${ movie.vote_average } / 10, ${ movie.vote_count } votes` }</span>
+							<span className="rating column"><i className="fas fa-lg fa-star"></i>{ `${ movie.vote_average } / 10 | ${ movie.vote_count } votes` }</span>
 						</div>
 
 						<p className="overview">{ movie.overview }</p>
