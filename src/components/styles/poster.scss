@@ -1,9 +1,14 @@
+@import '../../styles/global/variables';
+
 .poster {
 	&.-single {
 		width: 470px;
 	}
 
 	&.-profile {
+		background: $color-silver;
+		height: 100%;
+
 		img {
 			display: block;
 		}

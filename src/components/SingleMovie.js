@@ -50,7 +50,7 @@ class SingleMovie extends Component {
 		const hours = Math.floor( minutes / 60 );
 		const leftMinutes = minutes % 60;
 
-		return <span className="runtime column">{ `${ hours }hr ${ leftMinutes }min` }</span>
+		return <span className="runtime column"><i className="fas fa-lg fa-clock"></i>{ `${ hours }hr ${ leftMinutes }min` }</span>
 	}
 
 	renderMovie = ( movie ) => {
@@ -66,8 +66,8 @@ class SingleMovie extends Component {
 						<h1>{ movie.title }</h1>
 						<div className="metadata columns">
 							{ this.convertRuntime( movie.runtime ) }
-							<span className="genres column">{ genres }</span>
-							<span className="rating column">{ `${ movie.vote_average } / 10, ${ movie.vote_count } votes` }</span>
+							<span className="genres column"><i className="fas fa-lg fa-film"></i>{ genres }</span>
+							<span className="rating column"><i className="fas fa-lg fa-star"></i>{ `${ movie.vote_average } / 10 | ${ movie.vote_count } votes` }</span>
 						</div>
 
 						<p className="overview">{ movie.overview }</p>
